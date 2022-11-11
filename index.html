@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Academlo Store</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="./src/css/styles.css" />
+    </head>
+    <body>
+
+        <header class="header" id="header">
+            <div class="nav_container">
+                <a href="#" class="nav_logo">
+                    <img class="nav_img-logo" src="./src/img/favicon.png" alt="">
+                    <p class="text_logo"><b>STORE</b> </p>
+                </a>
+                <ul class="menu_nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+                <div class="nav_icons">
+                    <div class="nav_shop" id="cart-shop">
+                        <i class="bx bx-shopping-bag"></i>
+                        <span id="cart-count" class="count"></span>
+                    </div>
+
+                    <div class="nav_toggle" id="nav-toggle">
+                        <i class="bx bx-grid-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+
+            <section><div class="home" id="home">
+                <div class="home_container">
+                    <div class="home_container-img">
+                        <img class="home_img" src="./src/img/home.png" alt="New Sweatshirt">
+                    </div>
+                    <div class="home_information">
+                        <h1 class="home_information-title">
+                            New Sweatshirt <br> COLLECTIONS 2022
+                        </h1>
+                        <P class="home_information-description">
+                            Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.
+                        </P>
+                        <p class="home_information-price">
+                            $ 14.00
+                        </p>
+                        <div class="home_information-btns">
+                            <a
+                                href="#"
+                                class="button_gray"
+                            >
+                                Discover
+                            </a>
+
+                            <button class="button_add">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products" id="products">
+                <div class="products_container">
+
+                    <div class="products-filters">
+                        <div class="products-items"data-filter="all" >
+                            <div class="products-items-title">
+                                <h3>Show All</h3>
+                                <span>Show all products</span>
+                            </div>
+                        </div>
+
+                        <div class="products-items"data-filter=".hoodies" >
+                            <div class="products-items-title">
+                                <h3>Hoodies</h3>
+                                <span>3 products</span>
+                            </div>
+                        </div>
+
+                        <div class="products-items"data-filter=".shirts" >
+                            <div class="products-items-title">
+                                <h3>Shirts</h3>
+                                <span>4 products</span>
+                            </div>
+                        </div>
+
+                        <div class="products-items"data-filter=".sweatshirts" >
+                            <div class="products-items-title">
+                                <h3>Sweatshirts</h3>
+                                <span>4 products</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="products-cards">
+
+                        <div class="cards-unit hoodies">
+                            <div class="cards-unit-img">
+                                <img src="./src/img/Hoodies.png" alt="Hoodies">
+                            </div>
+                            
+                            <div class="cards-unit-inf">
+
+                                <div class="cards-unit-bt">
+                                    <p>+</p>
+                                </div>
+                                
+                                <div class="price-stock">
+                                    <p> <b .price_card>$14.00 </b>| Stock: 9</p>
+                                </div>
+                                <h3>Hoodies</h3>
+                            </div>
+                        </div>
+
+                        <div class="cards-unit shirts">
+                            <div class="cards-unit-img">
+                                <img src="./src/img/shirts.png" alt="shirts">
+                            </div>
+                            
+                            <div class="cards-unit-inf">
+
+                                <div class="cards-unit-bt">
+                                    <p>+</p>
+                                </div>
+
+                                <div class="price-stock">
+                                    <p> <b .price_card>$24.00 </b>| Stock: 14</p>
+                                </div>
+                                <h3>Shirts</h3>
+                            </div>
+                        </div>
+
+                        <div class="cards-unit sweatshirts">
+                            <div class="cards-unit-img">
+                                <img src="./src/img/sweatshirts.png" alt="sweatshirts">
+                            </div>
+                            
+                            <div class="cards-unit-inf">
+
+                                <div class="cards-unit-bt">
+                                    <p>+</p>
+                                </div>
+
+                                <div class="price-stock">
+                                    <p> <b .price_card>$24.00 </b>| Stock: 19</p>
+                                </div>
+                                <h3>Sweatshirts</h3>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer_container">
+                
+                <div class="footer-content">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><p>Toluca - México</p></li>
+                    </ul>
+
+                    
+                </div>
+                <div class="footer-content">
+                    <h3>Our information</h3>
+                    <ul>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Copy Right</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#products">Hoodies</a></li>
+                        <li><a href="#products">Shirts</a></li>
+                        <li><a href="#products">Sweatshirts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content">
+                    <h3>Social</h3>
+                    <ul class="icom_social">
+                        <li><a href="https://www.facebook.com/francisco.alejandro.524/" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                        <li><a href="https://twitter.com/torrellesf" target="_blank"><i class='bx bxl-twitter' ></i></i></a></li>
+                        <li><a href="https://www.instagram.com/franciscotorrelles/" target="_blank"><i class='bx bxl-instagram'></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <span class="footer_copy">
+                <p>© ACADEMLO. All rigths reserved</p>
+            </span>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="./src/js/main.js" type="module"></script>
+
+    </body>
+</html>
