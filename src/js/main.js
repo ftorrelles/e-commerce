@@ -51,7 +51,7 @@ const contentBagShop = document.querySelector(".content-bag-shop");
 const icomShoppingX = document.querySelector(".bx-x");
 const contentBagShopItems = document.querySelector(".content-bag-shop_items");
 const contentBagShopTotal = document.querySelector(".content-bag-shop_total");
-
+const amountBag = document.querySelector(".count_bag");
 ////////funciones de pintar////////////
 let ObjetBagShop = {};
 
@@ -71,7 +71,9 @@ function printCards() {
             ${btBuy}
             <div class="card-inf">                                                
                 <div class="card_price-stock">
-                    <span><b class="price">$${price},00</b> | Stock: ${stock}</span>
+                    <span><b class="price">$${price.toFixed(
+                        2
+                    )}</b> | Stock: ${stock}</span>
                 </div>
                 <h3>${name}</h3>
             </div>
@@ -96,7 +98,7 @@ function printBagShop() {
             <div class="card-bag-inf">
                 <h3>${name}</h3>
                 <span>Stock: ${stock}</span>                                              
-                <p class="card-bag-price">Price: $ ${price},00</p>
+                <p class="card-bag-price">Price: $ ${price.toFixed(2)}</p>
                 <div class="card-bag-bt">
                     <button class="bag-bt less" id="${id}">-</button>
                     <span><strong>${amount} units</strong></span>
@@ -123,8 +125,20 @@ function printTotal() {
             return acum;
         }, 0);
         contentBagShopTotal.innerHTML = `
-    <h3>Total: $${total},00</h3>
+    <h3>Total: $${total.toFixed(2)}</h3>
     <button class="bt buy">Comprar</button>
+    `;
+    }
+
+    if (!newArraySum.length) {
+        amountBag.innerHTML = `<span>0</span>`;
+    } else {
+        let totalAmount = newArraySum.reduce((acum, curr) => {
+            acum += curr.amount;
+            return acum;
+        }, 0);
+        amountBag.innerHTML = `
+    <span>${totalAmount}</span>
     `;
     }
 }
@@ -223,7 +237,7 @@ contentBagShopTotal.addEventListener("click", (e) => {
         }
     }
 });
-console.log(ObjetBagShop);
+// console.log(ObjetBagShop);
 
 //////////libreria de filtro/////////////////////
 

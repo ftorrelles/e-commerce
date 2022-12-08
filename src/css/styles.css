@@ -121,6 +121,24 @@ html {
 .bx:hover {
     color: var(--img-home);
 }
+.nav_shop {
+    position: relative;
+}
+.count_bag {
+    background-color: var(--darkgray-btnAdd);
+    color: var(--container-color);
+    display: grid;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 0.8rem;
+}
 
 /* --------------------------- */
 
