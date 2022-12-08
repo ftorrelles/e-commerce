@@ -393,7 +393,7 @@ html {
 /* --products bag--*/
 
 .content-bag-shop_items {
-    height: 80%;
+    height: 78%;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -417,7 +417,7 @@ html {
     width: 70%;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .card-bag-price,
@@ -463,7 +463,7 @@ html {
     justify-content: space-around;
     align-items: flex-start;
     gap: 1rem;
-    height: 20%;
+    height: 18%;
     padding: 1rem;
 }
 

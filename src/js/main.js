@@ -118,15 +118,17 @@ function printTotal() {
 
     if (!newArraySum.length) {
         contentBagShopItems.innerHTML = `<img class="empty" src="./src/img/empty-cart.png" alt="Carrito vacio">`;
-        contentBagShopTotal.innerHTML = `<h3>Bolsa Vacia</h3>`;
+        contentBagShopTotal.innerHTML = `<h3>empty bag</h3>`;
     } else {
         let total = newArraySum.reduce((acum, curr) => {
             acum += curr.price * curr.amount;
             return acum;
         }, 0);
         contentBagShopTotal.innerHTML = `
-    <h3>Total: $${total.toFixed(2)}</h3>
-    <button class="bt buy">Comprar</button>
+        <div class="equals_information">
+            <h3>Total to pay: $${total.toFixed(2)}</h3>           
+        </div>
+        <button class="bt buy">Pay now</button> 
     `;
     }
 
