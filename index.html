@@ -5,11 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Academlo Store</title>
+        <!-- importe boxicons -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- importe hoja de estilo -->
         <link rel="stylesheet" href="./src/css/styles.css" />
     </head>
     <body>
-
+        <!-- header -->
         <header class="header" id="header">
             <div class="nav_container">
                 <a href="#" class="nav_logo">
@@ -17,8 +19,8 @@
                     <p class="text_logo"><b>STORE</b> </p>
                 </a>
                 <ul class="menu_nav">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li class="opMenu"><a href="#home">Home</a></li>
+                    <li class="opMenu"><a href="#products">Products</a></li>
                 </ul>
                 <div class="nav_icons">
                     <div class="nav_shop" id="cart-shop">
@@ -32,7 +34,7 @@
                 </div>
             </div>
         </header>
-
+        <!-- -----main------ -->
         <main class="main">
 
             <section><div class="home" id="home">
@@ -68,100 +70,49 @@
 
             <section class="products" id="products">
                 <div class="products_container">
-
                     <div class="products-filters">
-                        <div class="products-items"data-filter="all" >
+                        <div class="products-items" data-filter="all">
                             <div class="products-items-title">
                                 <h3>Show All</h3>
                                 <span>Show all products</span>
                             </div>
                         </div>
 
-                        <div class="products-items"data-filter=".hoodies" >
+                        <div class="products-items" data-filter=".hoodies">
                             <div class="products-items-title">
                                 <h3>Hoodies</h3>
                                 <span>3 products</span>
                             </div>
                         </div>
 
-                        <div class="products-items"data-filter=".shirts" >
+                        <div class="products-items" data-filter=".shirts">
                             <div class="products-items-title">
                                 <h3>Shirts</h3>
                                 <span>4 products</span>
                             </div>
                         </div>
 
-                        <div class="products-items"data-filter=".sweatshirts" >
+                        <div class="products-items" data-filter=".sweatshirts">
                             <div class="products-items-title">
                                 <h3>Sweatshirts</h3>
                                 <span>4 products</span>
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="products-cards">
+                    <div class="products-cards"></div>
 
-                        <div class="cards-unit hoodies">
-                            <div class="cards-unit-img">
-                                <img src="./src/img/Hoodies.png" alt="Hoodies">
-                            </div>
-                            
-                            <div class="cards-unit-inf">
-
-                                <div class="cards-unit-bt">
-                                    <p>+</p>
-                                </div>
-                                
-                                <div class="price-stock">
-                                    <p> <b .price_card>$14.00 </b>| Stock: 9</p>
-                                </div>
-                                <h3>Hoodies</h3>
-                            </div>
-                        </div>
-
-                        <div class="cards-unit shirts">
-                            <div class="cards-unit-img">
-                                <img src="./src/img/shirts.png" alt="shirts">
-                            </div>
-                            
-                            <div class="cards-unit-inf">
-
-                                <div class="cards-unit-bt">
-                                    <p>+</p>
-                                </div>
-
-                                <div class="price-stock">
-                                    <p> <b .price_card>$24.00 </b>| Stock: 14</p>
-                                </div>
-                                <h3>Shirts</h3>
-                            </div>
-                        </div>
-
-                        <div class="cards-unit sweatshirts">
-                            <div class="cards-unit-img">
-                                <img src="./src/img/sweatshirts.png" alt="sweatshirts">
-                            </div>
-                            
-                            <div class="cards-unit-inf">
-
-                                <div class="cards-unit-bt">
-                                    <p>+</p>
-                                </div>
-
-                                <div class="price-stock">
-                                    <p> <b .price_card>$24.00 </b>| Stock: 19</p>
-                                </div>
-                                <h3>Sweatshirts</h3>
-                            </div>
-                        </div>
-                    
+                    <div class="content-bag-shop">
+                        <i class="bx bx-x"></i>
+                        <h2 class="content-bag-shop_title">My bag</h2>
+                        <div class="content-bag-shop_items"></div>
+                        <div class="content-bag-shop_total"></div>
                     </div>
                 </div>
             </section>
 
         </main>
-
+        <!-- footer -->
         <footer class="footer">
             <div class="footer_container">
                 
@@ -210,9 +161,9 @@
             </div>
             
         </footer>
-
+        <!-- importe libreria filtro -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        <!-- importe del js -->
         <script src="./src/js/main.js" type="module"></script>
 
     </body>
