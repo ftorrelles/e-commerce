@@ -63,7 +63,7 @@ function printCards() {
         //agregar bt cuando se agota
         const btBuy = stock
             ? `<button class="card-bt" id="${id}">+</button>`
-            : `<button class="btNotAvailable">Agotado</button>`;
+            : `<button class="btNotAvailable">Empty</button>`;
         html += `
         <div class="product-card ${line}">
             <div class="card-img">
