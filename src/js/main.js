@@ -1,3 +1,4 @@
+/////abrir y cerrar menu /////////////////
 const iconMenu = document.querySelector(".bx-grid-alt");
 const menuNav = document.querySelector(".menu_nav");
 
@@ -158,7 +159,16 @@ productsCards.addEventListener("click", (e) => {
 
         if (ObjetBagShop[currentClothing.id]) {
             if (currentClothing.stock === ObjetBagShop[idClothing].amount)
-                return alert("No hay mas disponibilidad en el carrito");
+                //alerta
+                return Swal.fire({
+                    title: "Alert",
+                    text: "not available",
+                    icon: "warning",
+                    toast: true,
+                    position: "top-center",
+                    confirmButtonColor: "hsl(354, 78%, 60%)",
+                });
+
             ObjetBagShop[currentClothing.id].amount++;
         } else {
             ObjetBagShop[currentClothing.id] = { ...currentClothing };
@@ -173,10 +183,35 @@ contentBagShop.addEventListener("click", (e) => {
     if (e.target.classList.contains("less")) {
         const idClothing = Number(e.target.id);
         if (ObjetBagShop[idClothing].amount === 1) {
-            const op = confirm("Seguro quieres eliminar");
-            if (op) {
-                delete ObjetBagShop[idClothing];
-            }
+            //alerta de eliminar confirmando la acción
+            (async () => {
+                const { value: confirm } = await Swal.fire({
+                    title: "Confirm",
+                    text: "Are you sure you want to delete?",
+                    icon: "question",
+                    toast: true,
+                    position: "top",
+                    confirmButtonText: "Confirm",
+                    confirmButtonColor: "rgb(33, 17, 255)",
+                    showCancelButton: true,
+                    cancelButtonColor: "hsl(354, 78%, 60%)",
+                });
+                if (confirm) {
+                    delete ObjetBagShop[idClothing];
+                    printBagShop();
+                } else {
+                    Swal.fire({
+                        title: "info",
+                        text: "your products are safe :)",
+                        icon: "info",
+                        toast: true,
+                        position: "top",
+                        confirmButtonText: "ok",
+                        confirmButtonColor: "rgb(33, 17, 255)",
+                    });
+                }
+            })();
+            ////////////
         } else {
             ObjetBagShop[idClothing].amount--;
         }
@@ -187,15 +222,52 @@ contentBagShop.addEventListener("click", (e) => {
             (clothing) => clothing.id === idClothing
         );
         if (currentClothing.stock === ObjetBagShop[idClothing].amount)
-            return alert("No hay mas disponibilidad en el carrito");
+            //alerta
+            return Swal.fire({
+                title: "Alert",
+                text: "not available",
+                icon: "warning",
+                toast: true,
+                position: "top-center",
+                confirmButtonColor: "hsl(354, 78%, 60%)",
+            });
         ObjetBagShop[idClothing].amount++;
     }
     if (e.target.classList.contains("bx-trash-alt")) {
         const idClothing = Number(e.target.id);
-        const op = confirm("Seguro quieres eliminar");
-        if (op) {
-            delete ObjetBagShop[idClothing];
-        }
+        // const op = confirm("Seguro quieres eliminar");
+        // if (op) {
+        //     delete ObjetBagShop[idClothing];
+        // }
+        //alerta de eliminar confirmando la acción
+        (async () => {
+            const { value: confirm } = await Swal.fire({
+                title: "Confirm",
+                text: "Are you sure you want to delete?",
+                icon: "question",
+                toast: true,
+                position: "top",
+                confirmButtonText: "Confirm",
+                confirmButtonColor: "rgb(33, 17, 255)",
+                showCancelButton: true,
+                cancelButtonColor: "hsl(354, 78%, 60%)",
+            });
+            if (confirm) {
+                delete ObjetBagShop[idClothing];
+                printBagShop();
+            } else {
+                Swal.fire({
+                    title: "info",
+                    text: "your products are safe :)",
+                    icon: "info",
+                    toast: true,
+                    position: "top",
+                    confirmButtonText: "ok",
+                    confirmButtonColor: "rgb(33, 17, 255)",
+                });
+            }
+        })();
+        ////////////
     }
 
     printBagShop();
@@ -215,28 +287,40 @@ icomShoppingX.addEventListener("click", () => {
 
 contentBagShopTotal.addEventListener("click", (e) => {
     if (e.target.classList.contains("buy")) {
-        const op = confirm("Estas seguro que deseas comprar?");
-
-        if (op) {
-            clothingDataBase = clothingDataBase.map((clothingDataBase) => {
-                if (
-                    ObjetBagShop[clothingDataBase.id]?.id ===
-                    clothingDataBase.id
-                ) {
-                    return {
-                        ...clothingDataBase,
-                        stock:
-                            clothingDataBase.stock -
-                            ObjetBagShop[clothingDataBase.id].amount,
-                    };
-                } else {
-                    return clothingDataBase;
-                }
+        //alerta para pagar
+        (async () => {
+            const { value: confirm } = await Swal.fire({
+                title: "Confirm",
+                text: "do you want to pay now?",
+                icon: "question",
+                toast: true,
+                position: "top",
+                confirmButtonText: "Confirm",
+                confirmButtonColor: "rgb(33, 17, 255)",
+                showCancelButton: true,
+                cancelButtonColor: "hsl(354, 78%, 60%)",
             });
-            ObjetBagShop = {};
-            printCards();
-            printBagShop();
-        }
+            if (confirm) {
+                clothingDataBase = clothingDataBase.map((clothingDataBase) => {
+                    if (
+                        ObjetBagShop[clothingDataBase.id]?.id ===
+                        clothingDataBase.id
+                    ) {
+                        return {
+                            ...clothingDataBase,
+                            stock:
+                                clothingDataBase.stock -
+                                ObjetBagShop[clothingDataBase.id].amount,
+                        };
+                    } else {
+                        return clothingDataBase;
+                    }
+                });
+                ObjetBagShop = {};
+                printCards();
+                printBagShop();
+            }
+        })();
     }
 });
 // console.log(ObjetBagShop);

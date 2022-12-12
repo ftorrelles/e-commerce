@@ -4,7 +4,6 @@
     --dakcolor-title: hsl(0, 0%, 15%);
     --text-color: hsl(0, 0%, 35%);
     --text-color-light: hsl(0, 0%, 55%);
-
     --img-home: hsl(354, 78%, 60%);
     --darkgray-btnAdd: hsl(0, 0%, 17%);
     --gray-btndiscover: hsl(0, 0%, 75%);
@@ -46,7 +45,26 @@ a {
 html {
     scroll-behavior: smooth;
 }
+/* alerts */
 
+.btn-success {
+    background-color: var(--img-home);
+    border: none;
+    color: var(--container-color);
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    margin-left: 1rem;
+}
+.btn-danger {
+    background-color: var(--img-home);
+    border: none;
+    color: var(--container-color);
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+}
+/* --------- */
 /* ----------header nav------------- */
 
 .nav_container {
